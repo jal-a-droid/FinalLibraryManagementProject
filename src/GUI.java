@@ -11,7 +11,7 @@ public class GUI {
     public GUI(){
         frame = new JFrame();
         panel = new JPanel();
-        author = new JButton("");//creates a button with label
+        author = new JButton("");
         title = new JButton("");
         date = new JButton("");
     }
