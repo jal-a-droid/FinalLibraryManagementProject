@@ -2,11 +2,14 @@ public class DataHandling {
     String file;
     String newFile;
 
-    public DataHandling(){
-
+    public DataHandling() {
     }
 
-    public void importFile(){
+    public void importFile() {
+        // Placeholder for future database/file parsing logic
+    }
 
+    public void exportData() {
+        // Placeholder to save state on system exit
     }
 }

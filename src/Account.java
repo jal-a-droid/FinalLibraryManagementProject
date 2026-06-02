@@ -4,18 +4,32 @@ public class Account {
     String username;
     String userID;
     String password;
-    ArrayList<String> account;
-    public Account(String user, String ID){
+    ArrayList<String> accountDetails;
+
+    static ArrayList<Account> systemAccounts = new ArrayList<>();
+
+    public Account(String user, String password, String ID) {
         this.username = user;
-        this.userID = ID; //reference back to my Lua code to see how to create a random ID number
-        account = new ArrayList<String>();
+        this.password = password;
+        this.userID = ID;
+        this.accountDetails = new ArrayList<>();
+        systemAccounts.add(this);
     }
 
-    public void deleteAccount(){
-
+    public static Account authenticate(String user, String pass) {
+        for (Account acc : systemAccounts) {
+            if (acc.username.equals(user) && acc.password.equals(pass)) {
+                return acc;
+            }
+        }
+        return null;
     }
 
-    public void setPassword(ArrayList<String> account, String password){
-        account.add(4, password);
+    public void deleteAccount() {
+        systemAccounts.remove(this);
+    }
+
+    public void setPassword(String newPassword) {
+        this.password = newPassword;
     }
 }

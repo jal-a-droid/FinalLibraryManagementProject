@@ -1,5 +1,6 @@
 public class Constants {
-    //this class will hold all numbers to make everything look pretty
-    //it will make everything easier to read with labels instead of random numbers in the main code
-
+    public static final int WINDOW_WIDTH = 800;
+    public static final int WINDOW_HEIGHT = 600;
+    public static final String DEFAULT_ADMIN_USER = "admin";
+    public static final String DEFAULT_ADMIN_PASS = "123456";
 }

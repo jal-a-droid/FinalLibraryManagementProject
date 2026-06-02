@@ -1,11 +1,16 @@
+import javax.swing.SwingUtilities;
 public class Main {
-    public static void main(String[] args){
-     Library first = new Library("ken","barbie","1999");
-     Library second = new Library("neal","scythe","2016");
+    public static void main(String[] args) {
+        // Create an initial admin account for logging in
+        new Account(Constants.DEFAULT_ADMIN_USER, Constants.DEFAULT_ADMIN_PASS, "001");
 
-        Library.readAll();
-        Library.destroy(Library.find("1999"));
-        System.out.println("\n\n\n\n\n\n\n");
-        Library.readAll();
+        // Populate system with dummy data to test
+        new Library("Ken", "Barbie", "1999");
+        new Library("Neal", "Scythe", "2016");
+
+        // Launch the graphical interface
+        SwingUtilities.invokeLater(() -> {
+            new GUI();
+        });
     }
 }
